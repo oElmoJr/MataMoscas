@@ -2,15 +2,19 @@
 
 }
 
-.mosca0 {
+.mosca1 {
     width: 80px;
     height: 80px;
 }
-.mosca1 {
+.mosca2 {
     width: 100px;
     height: 100px;
 }
-.mosca2 {
+.mosca3 {
     width: 120px;
     height: 120px;
+}
+
+.ladoB {
+    transform: scaleX(-1);
 }
