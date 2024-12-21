@@ -1,20 +1,181 @@
 * {
-
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Press Start 2P", serif;
+    /* cursor: pointer; */
 }
+
+html {
+    cursor: url(assets/images/cursorPointer.png) 30 30, auto ;
+}
+
+body {
+    background: url(assets/images/bg1.jpg);
+    background-color: rgba(240, 232, 216, 0.74);
+    background-blend-mode: overlay;
+    /* background-repeat: no-repeat; */
+    background-size: auto;
+    background-size: 100%;
+}
+
 
 .mosca1 {
     width: 80px;
     height: 80px;
+    cursor: grab;
 }
+
 .mosca2 {
     width: 100px;
     height: 100px;
+    cursor: grab;
 }
+
 .mosca3 {
     width: 120px;
     height: 120px;
+    cursor: grab;
 }
 
 .ladoB {
     transform: scaleX(-1);
 }
+
+.painel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    width: 100vw;
+    padding: 28px;
+    color: #fff;
+    text-shadow: #000000 4px 2px 1px;
+}
+
+.vidas {
+    float: left;
+    
+}
+.vidas img {
+    width: 30px;
+}
+
+.cronometro {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+body {
+    height: 100vh;
+}
+
+.alerta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+    height: 95%;
+    
+    gap: 36px;
+}
+
+.alerta h1 {
+    font-size: 100px;
+    text-align: center;
+    /* cursor: default; */
+    width: 600px;
+}
+
+.alerta button {
+    width: 200px;
+    height: 50px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 2px solid #000;
+    box-shadow: #000 3px 3px 1px;
+
+    cursor: pointer;
+    transition: all ease-in-out 90ms;
+}
+
+.alerta button:hover {
+    background: #000;
+    color: #fff;
+    box-shadow: none;
+    transform: scale(0.99);
+}
+
+.alerta img {
+    width: 200px;
+}
+.alerta #mosca2 {
+    position: absolute;
+    left: 425px;
+    top: 25px
+}
+
+.alerta #mosca1 {
+    position: absolute;
+    right: 210px;
+    bottom: 200px;
+}
+
+.dificuldade {
+    display: flex;;
+    align-items: center;
+    gap: 16px;
+    
+}
+
+.dificuldade input {
+    transition: all ease-in-out 90ms;
+    appearance: none;
+    
+    border-radius: 0;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    height: 40px;
+    width: 150px;
+    box-shadow: #000 4px 4px 1px;
+    cursor: pointer;
+}
+
+.dificuldade input:checked, input:hover {
+    color: #fff;
+    border: 2px solid #000;
+    box-shadow: none;
+    transform: scale(0.99);
+    background-color: #adadad;
+}
+
+.radiobtn {
+    position: relative;
+}
+
+.dificuldade label {
+    font-size: 14px;
+    
+    position: absolute;
+    color: inherit;
+    top: 15px;
+    z-index: 1000;
+    margin-left: 35px;
+    cursor: pointer;
+
+    
+}
+
+legend {
+    font-size: 12px;
+}
+
+fieldset {
+    border: none;
+    padding: 16PX;
+}
+

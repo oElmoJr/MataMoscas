@@ -1,14 +1,65 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MataMoscas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+
+
+    <title>Document</title>
 </head>
-<body onresize="ajustarTamnhoPalcoJogo()">
+<body>
+    <div class="alerta">
+        <h1>MATA MOSCAS</h1>
+        <form>
+            <fieldset id="dif" class="dificuldade">
+                <legend>Selecione a dificuldade:</legend>
+                <div class="radiobtn">
+                    <label for="btnFacil">Facil</label>
+                    <input id="btnFacil" type="radio" name="dificuldade" value="1">
+                </div>
+                
+                <div class="radiobtn">
+                    <label for="btnNormal">Normal</label>
+                    <input id="btnNormal" type="radio" name="dificuldade" value="2" checked>
+                </div>
+                
+                <div class="radiobtn">
+                    <label for="btnDificil">Dificil</label>
+                    <input id="btnDificil" type="radio" name="dificuldade" value="3">
+                </div>
+            </fieldset>
+                <div>
+                    <button type="submit">Iniciar</button>
+                </div>
+        </form>
+        <img id="mosca1" src="assets/images/fly1.png" alt="">
+        <img id="mosca2" src="assets/images/fly2.png" alt="">
+    </div>
 </body>
 
-    <script src="script.js"></script>
+<script>
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        const data = new FormData(form);
+        let output = "";
+        
+        for (const entry of data) {
+            output = entry[1];
+        }
+
+        console.log(output)
+
+        window.location.href = "app.html?" + output;
+        event.preventDefault();
+    });
+
+</script>
 </html>
