@@ -37,7 +37,7 @@ cronometro = setInterval(() =>{
     } else {
         clearInterval(cronometro)
         clearInterval(Spawn)
-        window.location.href = "vitoria.html" 
+        window.location.href = "https://oelmojr.github.io/MataMoscas/vitoria.html" 
     }
 
 }, 1000)
@@ -52,7 +52,7 @@ function CriaMosca() {
             vidas--;
 
         } else {
-            window.location.href = "gameover.html"
+            window.location.href = "https://oelmojr.github.io/MataMoscas/gameover.html"
         }
     }
 
