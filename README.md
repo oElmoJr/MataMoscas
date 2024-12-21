@@ -4,6 +4,8 @@
 
 
 <h2 id="images" >Images</h2>
+
+![alt](assets/images/icon.png)
 ![alt](assets/images/tela_menu.jpeg)
 ![alt](assets/images/tela_jogo.jpeg)
 ![alt](assets/images/tela_gameover.jpeg)
