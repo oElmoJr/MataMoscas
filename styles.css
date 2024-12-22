@@ -114,8 +114,12 @@ body {
 }
 .alerta #mosca2 {
     position: absolute;
-    left: 425px;
-    top: 25px
+    left: 480px;
+    top: 30px
+}
+
+.index #mosca2 {
+    top: 0px;
 }
 
 .alerta #mosca1 {
