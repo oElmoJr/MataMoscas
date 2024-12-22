@@ -38,21 +38,29 @@ cronometro = setInterval(() =>{
         clearInterval(cronometro)
         clearInterval(Spawn)
         window.location.href = "https://oelmojr.github.io/MataMoscas/vitoria.html" 
+        // window.location.href = "/vitoria.html" 
     }
 
 }, 1000)
+   const audioWrong = document.getElementById("wrong")
 
 function CriaMosca() {
 
     if (document.getElementById("mosca")) {
         document.getElementById("mosca").remove()
-
+        
+        audioWrong.currentTime = 0; 
+        audioWrong.play();
+        
+        setTimeout(() => audioWrong.pause(), 500);
+        
         if (vidas > 0) {
             document.getElementById(`v${vidas}`).src = "assets/images/vidaVazia.png"
             vidas--;
 
         } else {
             window.location.href = "https://oelmojr.github.io/MataMoscas/gameover.html"
+            // window.location.href = "/gameover.html"
         }
     }
 
@@ -74,9 +82,26 @@ function CriaMosca() {
     mosca.style.top = `${posY}px`;
     
     mosca.style.position = `absolute`;
-    mosca.onclick = function() {this.remove()};
+    let audioSlap = document.getElementById("slap")
+    let audioFly = document.getElementById("audioFly")
     
-    document.body.appendChild(mosca)        
+    mosca.onclick = function() {
+        this.remove();
+        audioSlap.currentTime = 0;
+        audioSlap.play();
+        audioFly.pause()
+        
+        setTimeout(() => audioSlap.pause(), 500);
+        
+    };
+    
+    document.body.appendChild(mosca)   
+    
+    audioFly.currentTime = 0;
+    audioFly.play();
+    
+    setTimeout(() => audioFly.pause(), spawnTimer-100);
+
 }
 
 

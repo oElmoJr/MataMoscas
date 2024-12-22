@@ -13,38 +13,66 @@
 
 
     <title>Mata Moscas</title>
+    
 </head>
 <body>
+    <audio id="audioButtonClick" src="assets/sounds/button-4-214382.mp3" ></audio>
+    <audio id="bgFlies" src="assets/sounds/bg-flies-59723.mp3" ></audio>
+    <audio id="gameStart" src="assets/sounds/game-start-6104.mp3"></audio>
+    <audio id="audioButtonHover" src="assets/sounds"></audio>
+    <audio id="audioMenu" src="assets/sounds/menu-button-89141.mp3" autoplay></audio>
+    
+
     <div class="alerta">
         <h1>MATA MOSCAS</h1>
         <form>
             <fieldset id="dif" class="dificuldade">
                 <legend>Selecione a dificuldade:</legend>
                 <div class="radiobtn">
-                    <label for="btnFacil">Facil</label>
-                    <input id="btnFacil" type="radio" name="dificuldade" value="1">
+                    <label  for="btnFacil">Facil</label>
+                    <input onclick="buttonClick(audioButtonClick)" id="btnFacil" type="radio" name="dificuldade" value="1">
                 </div>
                 
                 <div class="radiobtn">
-                    <label for="btnNormal">Normal</label>
-                    <input id="btnNormal" type="radio" name="dificuldade" value="2" checked>
+                    <label  for="btnNormal">Normal</label>
+                    <input onclick="buttonClick(audioButtonClick)" id="btnNormal" type="radio" name="dificuldade" value="2" checked>
                 </div>
                 
                 <div class="radiobtn">
-                    <label for="btnDificil">Dificil</label>
-                    <input id="btnDificil" type="radio" name="dificuldade" value="3">
+                    <label  for="btnDificil">Dificil</label>
+                    <input onclick="buttonClick(audioButtonClick)" id="btnDificil" type="radio" name="dificuldade" value="3">
                 </div>
             </fieldset>
                 <div>
-                    <button type="submit">Iniciar</button>
+                    <button onmouseover="onMouseOver(audioButtonHover)" onclick="playAudio(gameStart)" type="submit">Iniciar</button>
                 </div>
-        </form>
-        <img id="mosca1" src="assets/images/fly1.png" alt="">
-        <img id="mosca2" src="assets/images/fly2.png" alt="">
-    </div>
+            </form>
+            <img id="mosca1" src="assets/images/fly1.png" alt="">
+            <img id="mosca2" src="assets/images/fly2.png" alt="">
+        </div>
 </body>
 
+
 <script>
+    
+    function onMouseOver(audio) {
+        audio.currentTime = 0; 
+        audio.play()    
+        
+        setTimeout(() => audio.pause(), 200);
+    }
+
+    function buttonClick(audio) {
+        audio.currentTime = 0; 
+        audio.play()    
+        
+        setTimeout(() => audio.pause(), 200);
+    }
+
+    function playAudio(audio) {
+        audio.play();
+    }
+
     const form = document.querySelector('form');
 
     form.addEventListener('submit', e => {
@@ -59,6 +87,7 @@
         console.log(output)
 
         window.location.href = "https://oelmojr.github.io/MataMoscas/app.html?" + output;
+        // window.location.href = "app.html?" + output;
         event.preventDefault();
     });
 
